@@ -14,7 +14,6 @@
     import { initializeApp } from "https://www.gstatic.com/firebasejs/10.7.1/firebase-app.js";
     import {
       getAuth, GoogleAuthProvider, signInWithPopup,
-      RecaptchaVerifier, signInWithPhoneNumber,
       onAuthStateChanged, signOut, setPersistence, browserLocalPersistence
     } from "https://www.gstatic.com/firebasejs/10.7.1/firebase-auth.js";
     import {
@@ -42,7 +41,6 @@
     window._fb = {
       auth, db,
       GoogleAuthProvider, signInWithPopup,
-      RecaptchaVerifier, signInWithPhoneNumber,
       onAuthStateChanged, signOut,
       doc, setDoc, getDoc, collection,
       addDoc, query, where, orderBy, getDocs, updateDoc, deleteDoc
@@ -898,95 +896,8 @@
       background: var(--border);
     }
 
-    .phone-wrap {
-      display: flex;
-      gap: 0;
-      margin-bottom: 16px;
-    }
-
-    .country-btn-wrap {
-      position: relative;
-      flex-shrink: 0;
-    }
-
-    .country-btn {
-      height: 52px;
-      padding: 0 14px;
-      background: var(--card);
-      border: 1px solid var(--border);
-      border-right: none;
-      color: var(--white);
-      cursor: pointer;
-      display: flex;
-      align-items: center;
-      gap: 8px;
-      font-size: 13px;
-      min-width: 96px;
-      transition: all 0.25s;
-      font-family: 'DM Sans', sans-serif;
-    }
-
-    .country-btn:hover,
-    .phone-wrap:focus-within .country-btn {
-      border-color: var(--red);
-    }
-
-    .country-dd {
-      position: absolute;
-      top: 100%;
-      left: 0;
-      width: 280px;
-      background: var(--dark);
-      border: 1px solid var(--border);
-      border-top: none;
-      max-height: 220px;
-      overflow-y: auto;
-      z-index: 999;
-      display: none;
-    }
-
-    .country-dd.open {
-      display: block;
-    }
-
-    .country-search-inp {
-      width: 100%;
-      padding: 10px 14px;
-      background: var(--card);
-      border: none;
-      border-bottom: 1px solid var(--border);
-      color: var(--white);
-      font-size: 12px;
-      outline: none;
-      font-family: 'DM Sans', sans-serif;
-    }
-
-    .country-search-inp::placeholder {
-      color: var(--muted);
-    }
-
-    .country-opt {
-      padding: 10px 14px;
-      cursor: pointer;
-      display: flex;
-      align-items: center;
-      gap: 10px;
-      font-size: 12px;
-      color: var(--white);
-      transition: background 0.2s;
-    }
-
-    .country-opt:hover {
-      background: rgba(200, 16, 46, 0.12);
-    }
-
-    .country-opt .c-code {
-      color: var(--red);
-      font-weight: 700;
-      min-width: 36px;
-      font-family: 'DM Mono', monospace;
-    }
-
+   
+    
     .phone-inp {
       flex: 1;
       height: 52px;
@@ -1001,10 +912,6 @@
     }
 
     .phone-inp:focus {
-      border-color: var(--red);
-    }
-
-    .phone-wrap:focus-within .phone-inp {
       border-color: var(--red);
     }
 
